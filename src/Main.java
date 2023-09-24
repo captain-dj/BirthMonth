@@ -3,24 +3,17 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // user enters price
-        System.out.println("Enter price of item: ");
-        double itemPrice = scanner.nextDouble();
+        // user enters birthday
+        System.out.println("Enter your birthday [1,12]: ");
+        double birthMonth = scanner.nextDouble();
 
-        // checks if price is viable for free shipping
-        double extaCost;
-        if (itemPrice >= 100.0) {
-            extaCost = 0.0;
+        // checks if input is valid
+        if (birthMonth >= 1 && birthMonth <= 12) {
+            System.out.println("Your birth day is " + birthMonth + " ");
+        } else {
+            System.out.println("This is a invalid input");
         }
-        else {
-            extaCost = 0.02 * itemPrice;
-        }
-
-        // math
-        double totalPrice = itemPrice + extaCost;
-
-        System.out.println("Shipping is: " + extaCost + " ");
-        System.out.println("Item is: " + totalPrice + " ");
 
         scanner.close();
     }
+}
